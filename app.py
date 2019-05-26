@@ -16,7 +16,7 @@ TOKEN_PATH: str = CONFIG_PATH + 'token.pickle'
 CREDENTIALS_PATH: str = CONFIG_PATH + 'credentials.json'
 # SCOPES: List[str] = ['https://www.googleapis.com/auth/contacts.readonly']
 SCOPES: List[str] = ['https://www.googleapis.com/auth/contacts']
-app = Flask(__name__)
+app: Flask = Flask(__name__)
 
 
 def g_login_people_api_v1() -> build:
@@ -58,18 +58,18 @@ def g_login_people_api_v1() -> build:
     return build('people', 'v1', credentials=creds)
 
 
-def g_get_contact_data(_service: build, pageSize: int) -> Any:
+def g_get_contact_data(build: build, pageSize: int) -> Any:
     """ Returns a dictionary of contact informationself.
         pageSize - number of contacts. """
-    results = _service.people().connections().list(
+    results = build.people().connections().list(
         resourceName='people/me',
         pageSize=pageSize,
         personFields='names,emailAddresses').execute()
     return results.get('connections', [])
 
 
-@app.route('connections')
-def serve_connections():
+@app.route('/connections')
+def serve_connections(connections: Any):
     """ Generate HTML page for connections. """
     pass
 
@@ -79,17 +79,12 @@ def hello():
     return "Hello World!"
 
 
-def main():
+def test_people_api(connections: Any):
     """Shows basic usage of the People API.
     Prints the name of the first 10 connections.
     """
-    # Initialize People API Instance
-    service = g_login_people_api_v1()
 
-    # Call the People API
-    page_size_num: int = 20
-    print('List 10 connection names')
-    connections = g_get_contact_data(service, pageSize=page_size_num)
+    print("List {} connection names".format(len(connections)))
     serve_connections(connections)
     for person in connections:
         names = person.get('names', [])
@@ -99,6 +94,14 @@ def main():
             print(name)
             print('-' * 79)
 
+
+def main():
+    # Initialize People API Instance
+    service = g_login_people_api_v1()
+    # Call the People API
+    page_size_num: int = 20
+    connections = g_get_contact_data(service, pageSize=page_size_num)
+    test_people_api(connections)
     app.run()
 
 
