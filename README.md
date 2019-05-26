@@ -2,16 +2,16 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/416b8ca3-82db-470f-9adf-a6d06264ca75/deploy-status)](https://app.netlify.com/sites/mystifying-keller-ab5658/deploys)  ![Azure DevOps builds](https://img.shields.io/azure-devops/build/skeptycal0275/skeptycal/1.svg?color=blue&label=Azure%20DevOps&style=popout) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/flask.svg?color=Yellow&label=Python&style=popout) ![Twitter Follow](https://img.shields.io/twitter/follow/skeptycal.svg?label=%40skeptycal&style=social) ![GitHub followers](https://img.shields.io/github/followers/skeptycal.svg?style=social)
 
-Last update: 05-26-2019 | 14:47:21
+Last update: 05-26-2019 | 15:44:28
 
 ---
 
-### test Google People API on macOS
+### Test Google People API on macOS
 
 ```bash
 
 ###############################################################################
-# people_api : test Google People API on macOS (version 0.0.3)
+# people_api : Test Google People API on macOS (version 0.0.3)
 #
 # author    - Michael Treanor  <skeptycal@gmail.com>
 # copyright - 2019 (c) Michael Treanor
@@ -49,7 +49,10 @@ Last update: 05-26-2019 | 14:47:21
 
 ```bash
 .
+├── LICENSE
+├── Procfile
 ├── README.md
+├── app.py
 ├── bak
 │   ├── README.md.bak
 │   ├── codecov.yml.bak
@@ -57,9 +60,10 @@ Last update: 05-26-2019 | 14:47:21
 │   ├── requirements.txt.bak
 │   └── setup.py.bak
 ├── codecov.yml
-├── quickstart.py
 ├── requirements.txt
-└── setup.py
+├── runtime.txt
+├── setup.py
+└── setup_google_api.sh
 
-1 directory, 10 files
+1 directory, 14 files
 ```
