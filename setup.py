@@ -15,17 +15,17 @@ from shutil import rmtree
 from setuptools import find_packages, setup, Command
 
 # Package meta-data.
-NAME = "text_colors"
-DESCRIPTION = "The obligatory ANSI text colors implementation."
-KEYWORDS_LIST = "ANSI color terminal iterm2 linux macos cli colorful rainbow"
+NAME = "Google People API"
+DESCRIPTION = "Test Google People API on macOS."
+KEYWORDS_LIST = "address connections contacts terminal google api macos cli flask requests"
 URL = "https://github.com/skeptycal/"
 EMAIL = "skeptycal@gmail.com"
 AUTHOR = "Michael Treanor"
 REQUIRES_PYTHON = ">=3.6.0"
-VERSION = "0.8.3"
+VERSION = "0.0.3"
 README_FILENAME = "README.md"
 
-SCRIPTS_LIST = ["text_colors.py"]
+SCRIPTS_LIST = ["quickstart.py"]
 
 # What packages are required for this module to be executed?
 REQUIRED = [
