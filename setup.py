@@ -25,7 +25,7 @@ REQUIRES_PYTHON = ">=3.6.0"
 VERSION = "0.0.3"
 README_FILENAME = "README.md"
 
-SCRIPTS_LIST = ["quickstart.py"]
+SCRIPTS_LIST = ["app.py"]
 
 # What packages are required for this module to be executed?
 REQUIRED = [

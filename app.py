@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-""" quickstart """
+""" app.py - Test of Google People API V1. """
 from __future__ import print_function
 import pickle
 import os.path
